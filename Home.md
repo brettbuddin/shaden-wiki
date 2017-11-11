@@ -7,7 +7,6 @@ issue](https://github.com/brettbuddin/lumen/issues) or email [brett@buddin.us](m
 
 ### Reference
 
-- [Lisp Dialect](Lisp-Dialect): Overview of the builtin lisp dialect
 - [Values](Values): The raw numbers that configure and drive your patches.
 - [Units](Units): Processors that populate the audio graph.
 - [Patching](Patching): Interacting with the audio graph.
