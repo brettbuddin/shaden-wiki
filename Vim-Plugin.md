@@ -1,16 +1,16 @@
 ## Install
 
-Copy `lumen.vim` plugin to your `plugin` directory:
+Copy `shaden.vim` plugin to your `plugin` directory:
 
     $ mkdir -p $HOME/.vim/plugin
-    $ cp extra/lumen.vim $HOME/.vim/plugin/lumen.vim
+    $ cp extra/shaden.vim $HOME/.vim/plugin/shaden.vim
 
 Add key-bindings to your `vimrc`:
 
 ```vimscript
-" Send a visual block of code to Lumen for evaluation
-vnoremap <C-S-P> :<C-U>LumenPatchSelection<CR>
+" Send a visual block of code to Shaden for evaluation
+vnoremap <C-S-P> :<C-U>ShadenPatchSelection<CR>
 
-" Send a line of code to Lumen for evaluation
-nnoremap <C-S-P> :<C-U>LumenPatchLine<CR>
+" Send a line of code to Shaden for evaluation
+nnoremap <C-S-P> :<C-U>ShadenPatchLine<CR>
 ```

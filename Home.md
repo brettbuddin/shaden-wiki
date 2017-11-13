@@ -1,4 +1,4 @@
-Welcome to the documentation for Lumen, a modular audio synthesizer.
+Welcome to the documentation for Shaden, a modular audio synthesizer.
 
 If you feel like something in these documents is vague or could use more clarity, please feel free to [file an
 issue](https://github.com/brettbuddin/lumen/issues) or email [brett@buddin.us](mailto:brett@buddin.us).
@@ -13,5 +13,5 @@ issue](https://github.com/brettbuddin/lumen/issues) or email [brett@buddin.us](m
 
 ### For Contributors
 
-- [Architecture](Architecture): Collection of notes on the overall architecture of Lumen.
+- [Architecture](Architecture): Collection of notes on the overall architecture of Shaden.
 - [Writing Units](Writing-Units): Information on how units are constructed.

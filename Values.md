@@ -1,4 +1,4 @@
-The data that flows between the [various Units](Units) in Lumen can be grouped into three categories: 
+The data that flows between the [various Units](Units) in Shaden can be grouped into three categories: 
 
 1. **Floating-Point**: These represent audio signals and control signals. These values are usually constrained to be in
    the range [-1,1], but can sometimes be higher.

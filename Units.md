@@ -1,5 +1,5 @@
-Units are what perform work inside the audio graph of Lumen.  This document details the list of all Units available in
-the Lumen runtime. Each Unit builder symbol takes the form `unit/*` and is a function that will yield a new Unit of that
+Units are what perform work inside the audio graph of Shaden.  This document details the list of all Units available in
+the Shaden runtime. Each Unit builder symbol takes the form `unit/*` and is a function that will yield a new Unit of that
 type. Some Units accept an optional table that contains any initialization-time parameters.
 
 Here are a few examples of unit creation:
