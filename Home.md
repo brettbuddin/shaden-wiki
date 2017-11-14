@@ -11,6 +11,10 @@ issue](https://github.com/brettbuddin/shaden/issues) or email [brett@buddin.us](
 - [Units](Units): Processors that populate the audio graph.
 - [Patching](Patching): Interacting with the audio graph.
 
+### Guides and Videos
+
+- [Shaden + Vim](https://www.youtube.com/watch?v=GbUTo6sPnW8)
+
 ### For Contributors
 
 - [Architecture](Architecture): Collection of notes on the overall architecture of Shaden.
