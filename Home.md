@@ -13,7 +13,7 @@ issue](https://github.com/brettbuddin/shaden/issues) or email [brett@buddin.us](
 
 ### Guides and Videos
 
-- [Shaden + Vim](https://www.youtube.com/watch?v=GbUTo6sPnW8)
+- [Shaden + Vim](https://www.youtube.com/watch?v=GbUTo6sPnW8): An overview of how I use Shaden.
 
 ### For Contributors
 
