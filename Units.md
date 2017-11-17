@@ -1,6 +1,4 @@
-Units are what perform work inside the audio graph of Shaden.  This document details the list of all Units available in
-the Shaden runtime. Each Unit builder symbol takes the form `unit/*` and is a function that will yield a new Unit of that
-type. Some Units accept an optional table that contains any initialization-time parameters.
+Units are what perform work inside Shaden. Each Unit has been designed to fulfill a specialized purpose. By connecting multiple Units together, using their inputs and outputs, you can create more complex behavior. This document details all Units available in the Shaden runtime. Each Unit builder symbol takes the form `unit/<type>` and is a function that will yield a new Unit of that type. Some Units accept an optional table that contains any initialization-time parameters.
 
 Here are a few examples of unit creation:
 
@@ -13,6 +11,13 @@ Here are a few examples of unit creation:
               (table :in (<- oscillator :sub-pulse) :level 0.3)
               (table :in (<- oscillator :saw) :level 0.5))))
 
+Once a Unit has been created there are three types of controls at your disposal. Those types are:
+
+1. **Inputs**: Accept signal into a Unit.
+2. **Outputs**: Emit signal from a Unit.
+3. **Properties**: Configuration that can change post-creation. These do not act as part of the audio graph and cannot be connected to either **Inputs** or **Outputs**.
+
+Depending on the purpose of the Unit, it may not provide controls of all three types.
 
 ## Signal Sources
 
