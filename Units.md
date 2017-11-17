@@ -604,6 +604,24 @@ Quantize a pitch to a set of intervals.
 |in|In|0|[0,1]|Unipolar value that's to be quantized|
 |out|Out|-|-|Quantized frequency|
 
+Example:
+
+```lisp
+(define oscillator (unit/gen))
+(define quant (unit/quantize))
+
+; the output of the elided "source" Unit will be quantized to one of the three intervals
+; P1, m3 and P5 around the tonic C4 resulting in the pitches: C4, Eb4 and G4
+(-> quant
+    (table :tonic (hz "C4")
+           :in (<- source)
+           :intervals (list (theory/interval :perfect 1) 
+                            (theory/interval :minor 3) 
+                            (theory/interval :perfect 5))))
+(-> oscillator (table :freq (<- quant)))
+(emit (<- oscillator :sine))
+```
+
 
 
 ### `(unit/switch options?)`
