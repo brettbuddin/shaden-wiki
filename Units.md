@@ -602,7 +602,7 @@ Quantize a pitch to a set of intervals.
 |intervals|Property|-|Any `theory/interval`|A `list` of `theory/interval`s to quantize to. Maximum size 32.|
 |tonic|In|A4|-|Tonic to base all `theory/interval` transpositions around|
 |in|In|0|[0,1]|Unipolar value that's to be quantized|
-|out|Out|-|-|Currently routed input signal|
+|out|Out|-|-|Quantized frequency|
 
 
 
