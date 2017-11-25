@@ -1,7 +1,9 @@
 Welcome to the documentation for Shaden, a modular audio synthesizer.
 
 If you feel like something in these documents is vague or could use more clarity, please feel free to [file an
-issue](https://github.com/brettbuddin/shaden/issues) or email [brett@buddin.us](mailto:brett@buddin.us).
+issue](https://github.com/brettbuddin/shaden/issues) or email [brett@buddin.us](mailto:brett@buddin.us). If you'd like
+to make a contribution to this wiki, please fork [brettbuddin/shaden-wiki](https://github.com/brettbuddin/shaden-wiki)
+and open a pull-request.
 
 ## Contents
 
