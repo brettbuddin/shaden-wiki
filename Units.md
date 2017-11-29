@@ -103,6 +103,28 @@ Two/three stage envelope generator.
 
 
 
+### `(unit/adsr)`
+
+ADSR (Attack/Decay/Sustain/Release) envelope generator.
+
+#### Inputs and Outputs
+
+|Name|Type|Default|Range|Description|
+|-|-|-|-|-|
+|gate|In|-1|[-1,1]|Strikes and holds the envelope generator, can also be used as trigger|
+|cycle|In|0|0, 1|Toggle for cycling|
+|attack|In|50ms|-|Duration of attack stage|
+|decay|In|50ms|-|Duration of decay stage|
+|sustain|In|0.5|-|Sustain level|
+|sustain-hold|In|0ms|-|Duration of sustain stage, unused when gated|
+|release|In|50ms|-|Duration of release stage|
+|ratio|In|0.01|-|Adjusts the inflection points of the curves|
+|out|Out|-|-|Envelope signal|
+|mirror|Out|-|-|Inverted envelope signal|
+|eoc|Out|-|-|End of cycle|
+
+
+
 ## Clock and Gate Sources
 
 ### `(unit/clock)`
@@ -889,6 +911,15 @@ Absolute value of `x`.
 |x|In|0|-||
 |out|Out|-|[0,any]||
 
+### `(unit/bipolar)`
+
+Convert unipolar signal (x) to bipolar signal.
+
+|Name|Type|Default|Range|Description|
+|-|-|-|-|-|
+|x|In|0|-||
+|out|Out|-|-||
+
 ### `(unit/ceil)`
 
 Ceiling of `x`.
@@ -928,6 +959,15 @@ Not `x`.
 ### `(unit/noop)`
 
 Direct passthrough of `x`.
+
+|Name|Type|Default|Range|Description|
+|-|-|-|-|-|
+|x|In|0|-||
+|out|Out|-|-||
+
+### `(unit/unipolar)`
+
+Convert bipolar signal (x) to unipolar signal.
 
 |Name|Type|Default|Range|Description|
 |-|-|-|-|-|
@@ -981,3 +1021,20 @@ MIDI controller input
 ## MIDI Output
 
 None yet 😉
+
+## Debug
+
+### `(unit/debug options?)`
+
+#### Options
+
+|Name|Default|Range|Description|
+|-|-|-|-|
+|fmt|"%.8f"|-|Format to use for printing|
+
+Format and print x to standard out.
+
+|Name|Type|Default|Range|Description|
+|-|-|-|-|-|
+|x|In|0|-||
+|out|Out|-|-||
