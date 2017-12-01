@@ -209,6 +209,21 @@ outputs that represent each step of the sequence.
 
 
 
+### `(unit/logic)`
+
+Binary logic processor that can freely switch between a set of logic functions.
+
+#### Inputs and Outputs
+
+|Name|Type|Default|Range|Description|
+|-|-|-|-|-|
+|x|In|-1|[-1,1]|Gate or trigger 1|
+|y|In|-1|[-1,1]|Gate or trigger 2|
+|mode|In|`logic/or`|`logic/or`, `logic/and`, `logic/xor`, `logic/nor`, `logic/nand`, `logic/nxor`|Logic function to use|
+|out|Out|-|[-1,1]|Output of logic function|
+
+
+
 ### `(unit/stages options?)`
 
 Sequencer modeled after some features in the Intellijel Metropolis.
