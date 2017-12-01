@@ -256,6 +256,20 @@ Sequencer modeled after some features in the Intellijel Metropolis.
 
 ## Processing
 
+### `(unit/center)`
+
+Remove DC offset from signal; centering it at zero.
+
+#### Inputs and Outputs
+
+|Name|Type|Default|Range|Description|
+|-|-|-|-|-|
+|in|In|-|-||
+|out|Out|-|-||
+
+
+
+
 ### `(unit/clip)`
 
 Hard or soft clipping of signal. If the unit is in soft-clipping mode, the signal will be compressed as it approaches
