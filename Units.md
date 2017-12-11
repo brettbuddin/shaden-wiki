@@ -616,15 +616,9 @@ Panning mixer.
 
 
 
-### `(unit/reverb options?)`
+### `(unit/reverb)`
 
 Reverb.
-
-#### Options
-
-|Name|Default|Range|Description|
-|-|-|-|-|
-|scale|1|[0.1,5]|Scalar for all delays in the unit. Controls maximum size of room.|
 
 #### Inputs and Outputs
 
@@ -637,6 +631,8 @@ Reverb.
 |cutoff-pre|In|300Hz|-|Cutoff frequency for filter that is placed after stage one of all-pass filters.|
 |cutoff-post|In|500Hz|-|Cutoff frequency for filter that is placed after stage two of all-pass filters.|
 |decay|In|0.5|-|Amount of amplitude attenuation each cycle signal takes through the chamber.|
+|size|In|0.1|[0.01,1]|Size of the chamber.|
+|shift-semitones|In|0|[-12,12]|Semitones to shift each reverberation. Produces interesting chorus effects.|
 |a|Out|-|-|Left channel output|
 |b|Out|-|-|Right channel output|
 
