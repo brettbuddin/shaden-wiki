@@ -82,6 +82,29 @@ Create an equal-tempered pitch with class and octave components. This is an easy
 
 
 
+### `(unit/sample)`
+
+WAV sample player.
+
+#### Options
+
+|Name|Default|Range|Description|
+|-|-|-|-|
+|file|""|-|Filepath to WAV file|
+
+#### Inputs and Outputs
+
+|Name|Type|Default|Range|Description|
+|-|-|-|-|-|
+|trigger|In|-1|[-1,1]|Play the sample or reset to the beginning|
+|begin|In|0|[0,0.95]|Beginning of the sample|
+|end|In|1|[0,1]|End of the sample|
+|direction|In|1|-1,1|Direction of playback|
+|cycle|In|0|-1,1|Automatically restart when end is reached|
+|a|Out|-|-|Left channel|
+|b|Out|-|-|Right channel|
+
+
 ### `(unit/slope)`
 
 Two/three stage envelope generator.
