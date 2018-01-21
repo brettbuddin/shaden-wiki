@@ -1,6 +1,6 @@
 ##### `(unit-builder opts?)`
 
-Creates an instance of a Unit. [See full list of Units available](Unit)
+Creates an instance of a Unit. [See full list of Units available](Units)
 
 ##### `(unit-unmount unit)`
 
