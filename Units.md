@@ -82,7 +82,7 @@ Create an equal-tempered pitch with class and octave components. This is an easy
 
 
 
-### `(unit/sample)`
+### `(unit/sample options?)`
 
 WAV sample player.
 
