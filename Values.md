@@ -3,7 +3,7 @@ The data that flows between the [various Units](Units) in Shaden can be grouped 
 1. **Floating-Point**: These represent audio signals and control signals. These values are usually constrained to be in
    the range [-1,1], but can sometimes be higher.
 1. **Integer**: Used to represent various modes in Unit inputs or scalar values.
-1. **Binary**: High or low signals which are represented by the bi-polar range [-1,1]  
+1. **Binary**: Low and high signals which are represented by the bi-polar values -1 and 1.
 
 ## Units
 
