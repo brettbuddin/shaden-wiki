@@ -33,6 +33,7 @@ Depending on the purpose of the Unit, it may not provide controls of all three t
   * [`(unit/euclid)`](#uniteuclid)
   * [`(unit/gate-series options?)`](#unitgate-series-options)
   * [`(unit/logic)`](#unitlogic)
+  * [`(unit/random-series)`](#unitrandom-series)
   * [`(unit/stages options?)`](#unitstages-options)
 - [Processing](#processing)
   * [`(unit/center)`](#unitcenter)
@@ -320,6 +321,24 @@ Binary logic processor that can freely switch between a set of logic functions.
 |y|In|-1|[-1,1]|Gate or trigger 2|
 |mode|In|`logic/or`|`logic/or`, `logic/and`, `logic/xor`, `logic/nor`, `logic/nand`, `logic/nxor`|Logic function to use|
 |out|Out|-|[-1,1]|Output of logic function|
+
+
+
+### `(unit/random-series)`
+
+Series of random values that shift right with each clock pulse. New values are written to the zeroth position of the tape and the `lock` input controls the probability in which there will be new random values written: 0 means new random value will always be written and 1 means it will never be written. Values for the `gate` and `value` outputs are read from the last position on the tape. When locked (`lock` at 1), the tape will wrap around, holding the pattern established by previous writes.
+
+#### Inputs and Outputs
+
+|Name|Type|Default|Range|Description|
+|-|-|-|-|-|
+|clock|In|-1|[-1,1]|Clock signal|
+|length|In|8|[2,16]|Length of the tape|
+|lock|In|0|[0,1]|Probability of new random values being written to zero position|
+|min|In|0|-|Minimum value of `value`|
+|max|In|0|-|Maximum value of `value`|
+|gate|Out|-|[-1,1]|Gate value at the end of the tape|
+|value|Out|-|[0,1]|Value at the end of the tape|
 
 
 
