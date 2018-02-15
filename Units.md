@@ -517,7 +517,7 @@ Filter that provides simultaneous low-pass, band-pass and high-pass outputs.
 
 |Name|Default|Range|Description|
 |-|-|-|-|
-|poles|4|[1,any]|Number of poles the filter has. Each pole attenuates -6dB.|
+|poles|4|[1,4]|Number of poles the filter has by default.|
 
 #### Inputs and Outputs
 
@@ -526,6 +526,7 @@ Filter that provides simultaneous low-pass, band-pass and high-pass outputs.
 |in|In|0|-||
 |cutoff|In|1000Hz|-|Cutoff frequency.|
 |res|In|1|[1,1000]|Resonance|
+|poles|In|4|[1,4]|Poles of the filter (each attenuates -6dB)|
 |lp|Out|-|-|Low-pass|
 |bp|Out|-|-|Band-pass|
 |hp|Out|-|-|High-pass|
