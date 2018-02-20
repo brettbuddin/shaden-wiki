@@ -28,16 +28,16 @@ Depending on the purpose of the Unit, it may not provide controls of all three t
   * [`(unit/adsr)`](#unitadsr)
 - [Clock and Gate Sources](#clock-and-gate-sources)
   * [`(unit/clock)`](#unitclock)
-  * [`(unit/clock-div)`](#unitclock-div)
-  * [`(unit/clock-mult)`](#unitclock-mult)
   * [`(unit/euclid)`](#uniteuclid)
   * [`(unit/gate-series options?)`](#unitgate-series-options)
-  * [`(unit/logic)`](#unitlogic)
   * [`(unit/random-series)`](#unitrandom-series)
   * [`(unit/stages options?)`](#unitstages-options)
 - [Processing](#processing)
   * [`(unit/center)`](#unitcenter)
+  * [`(unit/chance)`](#unitchance)
   * [`(unit/clip)`](#unitclip)
+  * [`(unit/clock-div)`](#unitclock-div)
+  * [`(unit/clock-mult)`](#unitclock-mult)
   * [`(unit/cond)`](#unitcond)
   * [`(unit/counter)`](#unitcounter)
   * [`(unit/decimate)`](#unitdecimate)
@@ -51,6 +51,7 @@ Depending on the purpose of the Unit, it may not provide controls of all three t
   * [`(unit/lag)`](#unitlag)
   * [`(unit/latch)`](#unitlatch)
   * [`(unit/lerp options?)`](#unitlerp-options)
+  * [`(unit/logic)`](#unitlogic)
   * [`(unit/mix options?)`](#unitmix-options)
   * [`(unit/mux options?)`](#unitmux-options)
   * [`(unit/overload)`](#unitoverload)
@@ -243,32 +244,6 @@ Clock.
 
 
 
-### `(unit/clock-div)`
-
-Clock divider.
-
-#### Inputs and Outputs
-
-|Name|Type|Default|Range|Description|
-|-|-|-|-|-|
-|in|In|-1|[-1,1]|Clock signal|
-|div|In|1|[1,any]|Divider|
-|out|Out|-|[-1,1]|Divided clock signal|
-
-
-
-### `(unit/clock-mult)`
-
-Clock multiplier. Averages sequential clock pulses to derive tempo.
-
-#### Inputs and Outputs
-
-|Name|Type|Default|Range|Description|
-|-|-|-|-|-|
-|in|In|-1|[-1,1]|Clock signal|
-|mult|In|1|[1,any]|Multiplier|
-|out|Out|-|[-1,1]|Multiplied clock signal|
-
 
 
 ### `(unit/euclid)`
@@ -307,20 +282,6 @@ outputs that represent each step of the sequence.
 |reset|In|-1|[-1,1]|Trigger to reset the sequencer|
 |{index}|Out|-|[-1,1]|Gate output for step `{index}` of the sequence|
 
-
-
-### `(unit/logic)`
-
-Binary logic processor that can freely switch between a set of logic functions.
-
-#### Inputs and Outputs
-
-|Name|Type|Default|Range|Description|
-|-|-|-|-|-|
-|x|In|-1|[-1,1]|Gate or trigger 1|
-|y|In|-1|[-1,1]|Gate or trigger 2|
-|mode|In|`logic/or`|`logic/or`, `logic/and`, `logic/xor`, `logic/nor`, `logic/nand`, `logic/nxor`|Logic function to use|
-|out|Out|-|[-1,1]|Output of logic function|
 
 
 
@@ -387,6 +348,21 @@ Remove DC offset from signal; centering it at zero.
 
 
 
+### `(unit/chance)`
+
+Coin toss. Use the `bias` control to control the probability of a gate from `in` resulting from `a` or `b`.
+
+#### Inputs and Outputs
+
+|Name|Type|Default|Range|Description|
+|-|-|-|-|-|
+|in|In|-|-|Signal input. Usually a gate.|
+|bias|In|[-1,1]|-|Bias of which output gets the gate (`a` or `b`). A value of 0 will be 50% chance.|
+|a|Out|-|-||
+|b|Out|-|-||
+
+
+
 
 ### `(unit/clip)`
 
@@ -401,6 +377,34 @@ the specified level.
 |soft|In|1|-|Toggle for soft clipping or hard clipping|
 |level|In|1|-|Amplitude to clip|
 |out|Out|-|-||
+
+
+
+### `(unit/clock-div)`
+
+Clock divider.
+
+#### Inputs and Outputs
+
+|Name|Type|Default|Range|Description|
+|-|-|-|-|-|
+|in|In|-1|[-1,1]|Clock signal|
+|div|In|1|[1,any]|Divider|
+|out|Out|-|[-1,1]|Divided clock signal|
+
+
+
+### `(unit/clock-mult)`
+
+Clock multiplier. Averages sequential clock pulses to derive tempo.
+
+#### Inputs and Outputs
+
+|Name|Type|Default|Range|Description|
+|-|-|-|-|-|
+|in|In|-1|[-1,1]|Clock signal|
+|mult|In|1|[1,any]|Multiplier|
+|out|Out|-|[-1,1]|Multiplied clock signal|
 
 
 
@@ -639,6 +643,23 @@ Linear interpolate between two values.
 |max|In|1|-|Maximum|
 |scale|In|1|[0,1]|Point between the `min` and `max`|
 |out|Out|-|-|Interpolated value|
+
+
+
+### `(unit/logic)`
+
+Binary logic processor that can freely switch between a set of logic functions.
+
+#### Inputs and Outputs
+
+|Name|Type|Default|Range|Description|
+|-|-|-|-|-|
+|x|In|-1|[-1,1]|Gate or trigger 1|
+|y|In|-1|[-1,1]|Gate or trigger 2|
+|mode|In|`logic/or`|`logic/or`, `logic/and`, `logic/xor`, `logic/nor`, `logic/nand`, `logic/nxor`|Logic function to use|
+|out|Out|-|[-1,1]|Output of logic function|
+
+
 
 
 
