@@ -31,8 +31,10 @@ Depending on the purpose of the Unit, it may not provide controls of all three t
   * [`(unit/euclid)`](#uniteuclid)
   * [`(unit/gate-series options?)`](#unitgate-series-options)
   * [`(unit/random-series)`](#unitrandom-series)
+  * [`(unit/rcd options?)`](#unitrcd)
   * [`(unit/stages options?)`](#unitstages-options)
 - [Processing](#processing)
+  * [`(unit/adjust)`](#unitadjust)
   * [`(unit/center)`](#unitcenter)
   * [`(unit/chance)`](#unitchance)
   * [`(unit/clip)`](#unitclip)
@@ -54,6 +56,7 @@ Depending on the purpose of the Unit, it may not provide controls of all three t
   * [`(unit/logic)`](#unitlogic)
   * [`(unit/mix options?)`](#unitmix-options)
   * [`(unit/mux options?)`](#unitmux-options)
+  * [`(unit/morph options?)`](#unitmorph-options)
   * [`(unit/overload)`](#unitoverload)
   * [`(unit/pan)`](#unitpan)
   * [`(unit/pan-mix options?)`](#unitpan-mix-options)
@@ -303,6 +306,29 @@ Series of random values that shift right with each clock pulse. New values are w
 
 
 
+
+### `(unit/rcd options?)`
+
+Rotating clock divider. Each output is a clock divider of the original clock
+signal. The indices of the outputs are 1-based.
+
+#### Options
+
+|Name|Default|Range|Description|
+|-|-|-|-|
+|size|8|[1,any]|Number of divider outputs to create|
+
+#### Inputs and Outputs
+
+|Name|Type|Default|Range|Description|
+|-|-|-|-|-|
+|clock|In|-1|[-1,1]|Clock|
+|rotate|In|-1|[-1,1]|Trigger to rotate the outputs|
+|reset|In|-1|[-1,1]|Trigger to reset the outputs to their original positions|
+|{index}|Out|-|[-1,1]||
+
+
+
 ### `(unit/stages options?)`
 
 Sequencer modeled after some features in the Intellijel Metropolis.
@@ -334,6 +360,21 @@ Sequencer modeled after some features in the Intellijel Metropolis.
 
 
 ## Processing
+
+### `(unit/adjust)`
+
+Add and/or multiply a signal.
+
+#### Inputs and Outputs
+
+|Name|Type|Default|Range|Description|
+|-|-|-|-|-|
+|in|In|-|-||
+|add|In|0|-|Offset to add to the signal|
+|mult|In|1|-|Amplication of the signal|
+|out|Out|-|-||
+
+
 
 ### `(unit/center)`
 
@@ -680,6 +721,29 @@ Mixer.
 |master|In|1|-|Master level for the mixer.|
 |{index}/in|In|0|-|Input for mixer input `{index}`|
 |{index}/level|In|1|-|Level for mixer input `{index}`|
+|out|Out|-|-||
+
+
+
+
+### `(unit/morph options?)`
+
+Mixer that allows you to move between different signals in a sequence. As an
+example: Suppose you have 3 inputs into the `unit/morph`, placing the `morph`
+input at 0.3 will output 50% input 0, 50% of input 1, 0% of index 2.
+
+#### Options
+
+|Name|Default|Range|Description|
+|-|-|-|-|
+|size|3|[1,any]|Number of inputs to mix between.|
+
+#### Inputs and Outputs
+
+|Name|Type|Default|Range|Description|
+|-|-|-|-|-|
+|morph|In|0|[0,1]|Position of the morph|
+|{index}|In|0|-|Signal input|
 |out|Out|-|-||
 
 
