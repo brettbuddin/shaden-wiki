@@ -73,6 +73,66 @@ Return a new pitch that's transposed by a specific interval.
                       (theory/interval :minor 2))
     ; C#3
 
+### `(theory/scale root-pitch name octaves)`
+
+Return a list of pitches containing the scale starting at a root pitch. Does not
+include the octave.
+
+**Example:**
+
+    (theory/scale (theory/pitch "C3") "major" 1)
+    ; (C3, D3, E3, F3, G3, A3, B3)
+
+**Scales:**
+
+- `aeolian`
+- `chromatic`
+- `dominant-bebop`
+- `dorian`
+- `double-harmonic`
+- `harmonic-minor`
+- `in-sen`
+- `ionian`
+- `locrian`
+- `lydian`
+- `major-bebop`
+- `major-pentatonic`
+- `major`
+- `melodic-minor-bebop`
+- `minor-pentatonic`
+- `minor`
+- `mixolydian`
+- `phrygian`
+- `whole-tone`
+
+### `(theory/chord root-pitch name)`
+
+Return a list of pitches containing the chord starting at a root pitch. Does not
+include the octave.
+
+**Example:**
+
+    (theory/chord (theory/pitch "C3") "major")
+    ; (C3, E3, G3)
+
+**Chords:**
+
+- `augmented-major-seventh`
+- `augmented-seventh`
+- `augmented-sixth`
+- `augmented`
+- `diminished-major-seventh`
+- `diminished-seventh`
+- `diminished`
+- `dominant-seventh`
+- `half-diminished-seventh`
+- `major-seventh`
+- `major-sixth`
+- `major`
+- `minor-seventh`
+- `minor-sixth`
+- `minor`
+
 ## Constants
 
 ### General Modes
