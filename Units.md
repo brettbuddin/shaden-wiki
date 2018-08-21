@@ -357,6 +357,7 @@ Sequencer modeled after some features in the Intellijel Metropolis.
 |gate|Out|-|[-1,1]|Gates of the active stage|
 |data|Out|-|-|Data of the active stage|
 |eos|Out|-|[-1,1]|End of stage|
+|sop|Out|-|[-1,1]|Star of pattern|
 
 
 ## Processing
